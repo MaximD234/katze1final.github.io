@@ -7,89 +7,248 @@
 <!-- Предварительные подключения к Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=share" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=content_copy" />
-<span class="material-symbols-outlined">
-</span>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=send" />
 
-<!-- Подключение шрифтов Caveat и Handlee -->
+<!-- Шрифты и иконки -->
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Handlee&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-<title>site</title>
+<title>Супер сайт о котах</title>
 
 <!-- Стиль -->
 <style>
-    body {
-        /* Можно выбрать один или оба шрифта, например: */
-        font-family: 'Handlee', 'Caveat', Arial, sans-serif; 
-        background-color: #d334db; /* цвет фона */
-        margin: 20px; /* отступы */
-    }
-    /* Можно задать разные шрифты для отдельных элементов, если нужно */
-    h1 {
-        font-family: 'Caveat', cursive;
-    }
-    p {
-        font-family: 'Handlee', cursive;
-    }
+  body {
+    font-family: 'Handlee', 'Caveat', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    margin: 20px;
+    color: #fff;
+  }
+
+  @keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.2);
+    transition: background 0.3s, transform 0.3s;
+  }
+  a:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+  }
+
+  h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-family: 'Handlee', cursive;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  /* Карточки цитат */
+  .quote {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    font-family: 'Caveat', cursive;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .quote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+  }
+  .quote span {
+    display: block;
+    font-size: 1.4em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffe600;
+  }
+
+  /* О котах */
+  .about {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 40px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Форма */
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  input[type=text] {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    width: 250px;
+    font-family: 'Handlee', cursive;
+    font-size: 1.2em;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+  input[type=text]:focus {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transform: scale(1.02);
+  }
+  button {
+    background: #fff;
+    color: #d334db;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Handlee', cursive;
+    font-size: 1.2em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+  }
+  button:hover {
+    background: #ffe0f0;
+    transform: scale(1.05);
+  }
+
+  /* Иконки */
+  .icon {
+    font-size: 28px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  /* Иконка копирования */
+  .copy-icon {
+    font-size: 60px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    transition: transform 0.3s, color 0.3s;
+  }
+  .copy-icon:hover {
+    transform: rotate(15deg);
+    color: #ffe600;
+  }
+
+  /* Футер */
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1em;
+    opacity: 0.8;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Анимация появления текста */
+  @keyframes floatUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 </style>
-
-<!-- ссылка для возврата -->
-<a href="katze.html">назад</a>
-
-<!-- подключение внешнего файла стилей -->
-<link rel="stylesheet" href="стиль45.css" />
 </head>
 <body>
-    <h1>Цитаты великих котов</h1>
-    <p>"Тишина — это язык кошки. Кто умеет слушать её шепот, тот понимает истинное спокойствие."</p>
-    
-    <div class="elem1 element" title="text 2">
-        "Грациозность — это не только движение, а выражение внутренней силы и достоинства."<br>
-        — Лорд Пушистый  
-    </div>
-    
-    <div class="elem3" title="text1">
-        "Каждая кошка — это тайна, которую нужно раскрывать с терпением и уважением."<br>
-        — Величественный Сфинкс  
-    </div>
-    
-    <div class="elem2 element">
-        >
-        <p class="hieroglyphs">
-          
-        </p>
-    </div>
-    
-    <h4 id="о котах">о котах</h4>
-    <div class="logo">
-        <span>
-            Katzen sind beliebte Haustiere auf der ganzen Welt.
-            Sie sind bekannt für ihre Unabhängigkeit, Eleganz und ihre liebevolle Natur.  
-            <br>
-            Katzen sind Säugetiere und gehören zur Familie der Felidae.
-            Sie sind in verschiedenen Farben und Größen erhältlich und haben ein weiches Fell, das sie sehr attraktiv macht.  
-            <br>
-            Katzen sind sehr saubere Tiere und verbringen viel Zeit mit Putzen.
-            Sie sind auch bekannt für ihre Fähigkeit, Mäuse und andere kleine Tiere zu jagen, was sie in der Vergangenheit zu wichtigen Begleitern der Menschen gemacht hat.  
-            <br>
-            Viele Menschen schätzen Katzen als treue und verspielte Begleiter.
-            Darüber hinaus sind Katzen oft ruhig und entspannen sich gerne in sonnigen Plätzen.    
-        </span>
-        <span class="material-symbols-outlined">
-<form action="">
-    <input type="form" />
-    <button>кнопка</button>
-  </form>
 
-<span class="material-symbols-outlined">
-send
-</span>
-        </span>
-    </div>
-    
-    <!-- Подключение иконок Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<!-- Назад -->
+<a href="katze.html">🔙 назад</a>
+
+<h1>🐱 Цитаты великих котов 🐱</h1>
+
+<!-- Цитаты -->
+<div class="quote" style="animation: floatUp 1s ease-out;">
+  <p>"Тишина — это язык кошки. Кто умеет слушать её шепот, тот понимает истинное спокойствие."</p>
+</div>
+<div class="quote" style="animation: floatUp 1.2s ease-out;">
+  <p>"Грациозность — это не только движение, а выражение внутренней силы и достоинства."</p>
+  <span>— Лорд Пушистый</span>
+</div>
+<div class="quote" style="animation: floatUp 1.4s ease-out;">
+  <p>"Каждая кошка — это тайна, которую нужно раскрывать с терпением и уважением."</p>
+  <span>— Величественный Сфинкс</span>
+</div>
+
+<!-- О котах -->
+<h4 id="о котах" style="text-align:center; margin-top:50px;">о котах</h4>
+<div class="about">
+  <span> Katzen sind beliebte Haustiere auf der ganzen Welt. Sie sind bekannt für ihre Unabhängigkeit, Eleganz und ihre liebevolle Natur.</span>
+  <span>Katzen sind Säugetiere und gehören zur Familie der Felidae. Sie sind in verschiedenen Farben und Größen erhältlich und haben ein weiches Fell, das sie sehr attraktiv macht.</span>
+  <span>Katzen sind sehr saubere Tiere und verbringen viel Zeit mit Putzen. Sie sind auch bekannt für ihre Fähigkeit, Mäuse und andere kleine Tiere zu jagen, was sie in der Vergangenheit zu wichtigen Begleitern der Menschen gemacht hat.</span>
+  <span>Viele Menschen schätzen Katzen als treue und verspielte Begleiter. Darüber hinaus sind Katzen oft ruhig und entspannen sich gerne in sonnigen Plätzen.</span>
+</div>
+
+<!-- Контейнер для формы -->
+<div class="form-container" style="margin-top:40px;">
+  <form id="messageForm" action="">
+    <input type="text" placeholder="Ihre Nachricht..." id="userMessage" />
+    <button type="submit">Senden <span class="material-symbols-outlined icon">send</span></button>
+  </form>
+</div>
+
+<!-- Иконка копирования -->
+<div style="text-align:center;">
+  <svg class="copy-icon" id="copyIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M16 1H4a1 1 0 00-1 1v14h2V3h11V1zm3 4H8a1 1 0 00-1 1v16a1 1 0 001 1h11a1 1 0 001-1V6a1 1 0 00-1-1zm-1 16H9v-2h9v2z"/>
+  </svg>
+</div>
+
+<!-- Футер -->
+<footer>
+  © 2024 — Мой супер сайт о котах. Все права защищены.
+</footer>
+
+<!-- Скрипт -->
+<script>
+  // Копирование текста
+  document.getElementById('copyIcon').addEventListener('click', () => {
+    const text = document.querySelector('footer').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Текст скопирован!');
+    });
+  });
+
+  // Обработка формы
+  document.getElementById('messageForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Ваше сообщение отправлено! Спасибо!');
+    document.getElementById('userMessage').value = '';
+  });
+</script>
 </body>
 </html>

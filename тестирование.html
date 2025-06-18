@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -17,14 +15,20 @@
 <title>кошачья страница</title>
 
 <style>
-  /* Общие стили */
+  /* Общие стили для всего сайта */
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #fafafa;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    /* Ваш фон */
+    background-image: url('https://img.goodfon.com/wallpaper/nbig/e/df/kolosia-rzhi-pole-zakat-koloski.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Добавляем прозрачность фона, чтобы картинки были видимы */
+    background-color: rgba(255, 255, 255, 0.3);
     color: #333;
   }
 
@@ -63,7 +67,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 
   /* Основной контент */
@@ -100,6 +103,7 @@
     margin-bottom: 40px;
   }
 
+  /* Убедитесь, что картинки видимы и не перекрываются */
   .images img {
     width: 250px;
     max-width: 100%;
@@ -107,6 +111,8 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     object-fit: cover;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* добавлено для z-index */
+    z-index: 10; /* изображение поверх фона */
   }
 
   .images img:hover {
@@ -279,7 +285,7 @@
   <span class="material-icons icon" title="Меню" onclick="alert('Меню')">menu</span>
 </div>
 
-<!-- Основной контент -->
+<!-- Основной контейнер -->
 <div class="main-container">
   <main>
     <h1>Willkommen auf der Katzenseite</h1>
@@ -288,8 +294,8 @@
 
     <!-- Галерея -->
     <div class="images">
-      <img src="istockphoto-104355461-612x612.jpg" alt="Кот 1" />
-      <img src="istockphoto-1443562748-612x612.jpg" alt="Кот 2" />
+      <img src="https://sun9-72.userapi.com/impg/Xx-rypHiev_jabj_lEPtMVwNrERKzpVCr6-GDA/mJicDihTYLA.jpg?size=604x524&quality=95&sign=7ffe3afe5994ed4cddcc0e43cdef0f87&type=album" alt="Кот 1" />
+      <img src="https://thehillstimes.in/wp-content/uploads/2024/04/Anchor-12.jpg" alt="Кот 2" />
     </div>
 
     <!-- Ссылки -->
@@ -333,7 +339,7 @@
 
 <!-- Подвал -->
 <footer>
-  &copy; 2024 Мой сайт о котах. Все права защищены.
+  © 2025 Мой сайт о котах. Все права защищены.
 </footer>
 
 <!-- Скрипт погоды -->

@@ -1,67 +1,108 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Google Fonts: Caveat и Roboto -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<!-- Подключение шрифта Caveat -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+
+<!-- Google Fonts (если нужен) -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet" /> -->
 
 <!-- Material Icons -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-<title>кошачья страница</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new" />
+<!-- Ваш основной стиль -->
 <style>
-  /* Общие стили для всего сайта */
+  /* Общие стили для всего сайта с увеличенными шрифтами и мягким дизайном */
   body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Ваш фон */
-    background-image: url('https://img.goodfon.com/wallpaper/nbig/e/df/kolosia-rzhi-pole-zakat-koloski.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Добавляем прозрачность фона, чтобы картинки были видимы */
-    background-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #f0f8ff, #ffe4e1);
     color: #333;
   }
 
-  /* Меню слева (боковая панель) */
+  /* Видеофон с затемнением для лучшей читаемости текста */
+  #video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
+  }
+ 
+
+
+
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+  /* Боковое меню - стиль */
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 80px;
-    background-color: #222;
+    background: rgba(34, 34, 34, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
-    z-index: 1000;
+    padding-top: 50px;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.2);
+    border-radius: 0 10px 10px 0;
+    transition: background 0.3s;
   }
 
-  .sidebar .icon {
+  .sidebar:hover {
+    background: rgba(34, 34, 34, 1);
+  }
+
+  .icon {
     font-size: 36px;
     margin: 30px 0;
     color: #fff;
     cursor: pointer;
     transition: transform 0.2s, color 0.2s;
   }
+.material-symbols-outlined {
+  font-size: 36px;
+    margin: 30px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
 
-  .sidebar .icon:hover {
+    ;
+
+}
+ .material-symbols-outlined:hover {
+   color: #00bcd4;
+    transform: scale(1.1);
+ }
+  .icon:hover {
     color: #00bcd4;
     transform: scale(1.1);
   }
 
-  /* Основной контейнер с отступом слева */
+  /* Основной контейнер - отступ слева */
   .main-container {
     margin-left: 80px;
     flex: 1;
@@ -69,26 +110,27 @@
     flex-direction: column;
   }
 
-  /* Основной контент */
+  /* Основной контент с мягкими отступами */
   main {
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  /* Заголовок сайта */
+  /* Заголовки сайта */
   h1 {
     font-family: 'Caveat', cursive;
     font-size: 3rem;
     text-align: center;
     margin-bottom: 20px;
     color: #222;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 
-  /* Заголовок приветствия */
+  /* Приветственный заголовок */
   .welcome-title {
     font-family: 'Caveat', cursive;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 30px;
     color: #555;
@@ -103,21 +145,20 @@
     margin-bottom: 40px;
   }
 
-  /* Убедитесь, что картинки видимы и не перекрываются */
+  /* Фото галереи */
   .images img {
     width: 250px;
     max-width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     object-fit: cover;
     transition: transform 0.3s, box-shadow 0.3s;
-    position: relative; /* добавлено для z-index */
-    z-index: 10; /* изображение поверх фона */
+    cursor: pointer;
   }
 
   .images img:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   }
 
   /* Ссылки-кнопки */
@@ -130,21 +171,23 @@
   }
 
   .links a {
-    padding: 12px 24px;
+    padding: 14px 24px;
     background-color: #00bcd4;
     color: #fff;
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
   }
 
   .links a:hover {
     background-color: #0097a7;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
-  /* Таблица */
+  /* Таблица с современным стилем */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -152,6 +195,7 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #fff;
   }
 
   caption {
@@ -160,12 +204,15 @@
     padding: 15px;
     background-color: #00bcd4;
     color: #fff;
+    text-align: center;
   }
 
   th, td {
     padding: 15px;
     border: 1px solid #ddd;
     text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
   }
 
   th {
@@ -175,29 +222,31 @@
   }
 
   tr:nth-child(even) {
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
   }
 
-  /* Форма */
+  /* Форма обратной связи */
   form {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 50px;
     flex-wrap: wrap;
+    margin-bottom: 50px;
   }
 
   input[type="text"] {
     padding: 14px 20px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 1rem;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
     width: 300px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
   input[type="text"]:focus {
     border-color: #00bcd4;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
     outline: none;
   }
 
@@ -207,7 +256,8 @@
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
   }
@@ -217,12 +267,12 @@
     transform: scale(1.05);
   }
 
-  /* Погода */
+  /* Погода виджет */
   .weather-widget {
     background-color: #fff;
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     max-width: 600px;
     margin: 0 auto 50px auto;
     text-align: center;
@@ -230,7 +280,7 @@
 
   .weather-widget h2 {
     font-family: 'Caveat', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     color: #222;
   }
@@ -241,12 +291,20 @@
     color: #333;
   }
 
-  /* Подвал - сделан полупрозрачным */
+  /* Подвал сайта */
   footer {
-    background-color: rgba(34, 34, 34, 0.6); /* Полупрозрачный фон */
+    background: rgba(34, 34, 34, 0.6);
     color: #fff;
     padding: 20px;
     text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+  }
+
+  footer a {
+    color: #ffd700;
+    margin: 0 10px;
+    text-decoration: underline;
   }
 
   /* Адаптивность */
@@ -254,44 +312,73 @@
     body {
       font-size: 14px;
     }
-
     .sidebar {
       width: 60px;
     }
-
     main {
       padding: 20px 10px;
     }
-
     h1 {
       font-size: 2rem;
     }
-
     .images {
       gap: 15px;
     }
-
     .images img {
       width: 200px;
     }
   }
+  .icon {
+   font-size: larger;
+   border: #e07b1b;
+   
+  
+  
+  }
+ 
 </style>
+<title>Кошачья страница</title>
 </head>
 <body>
 
+<!-- Видеофон -->
+<video id="video-background" autoplay muted loop playsinline>
+  <source src="./Закат таймлапс Поле пшеницы.mp4" type="video/mp4" />
+  Ваш браузер не поддерживает тег video.
+</video>
+
+
+
+ <!-- Боковое меню -->
+
 <!-- Боковое меню -->
 <div class="sidebar">
+  <span class="material-symbols-outlined">
+open_in_new
+</span>
+<i class="fa-duotone fa-solid fa-plane-departure"></i>
+  <span class="material-symbols-outlined" title="выход" id="closeBtn">close</span>
+  <!--span class="material-symbols-outlined" title="поиск" id="searchBtn">search</span>-->
+  <!--span class="material-symbols-outlined" title="Настройки" id="settingsBtn">settings</span>-->
+  <span class="material-icons icon" title="Главная" id="homeBtn">home</span>
+  <span class="material-icons icon" title="Меню" id="menuBtn">menu</span>
+</div>
+<!-- Боковое меню --
+<div class="sidebar">
+<i class="fa-sharp-duotone fa-thin fa-fish"></i>
+  <span class="material-symbols-outlined" title="выход" onclick="close"   >close</span>
+<span class="material-symbols-outlined" title="поиск" onclick="alert('поиск')">search</span>
+<span class="material-symbols-outlined" title="Настройки" onclick="alert('Настройки')">settings </span>
   <span class="material-icons icon" title="Главная" onclick="alert('Главная')">home</span>
   <span class="material-icons icon" title="Меню" onclick="alert('Меню')">menu</span>
-</div>
+</div> --> 
+
+<!-- Заголовок сайта -->
+<h1 class="header">Willkommen auf der Katzenseite</h1>
 
 <!-- Основной контейнер -->
 <div class="main-container">
   <main>
-    <h1>Willkommen auf der Katzenseite</h1>
-    <!-- Заголовок приветствия -->
-    <div class="welcome-title"></div>
-
     <!-- Галерея -->
     <div class="images">
       <img src="https://sun9-72.userapi.com/impg/Xx-rypHiev_jabj_lEPtMVwNrERKzpVCr6-GDA/mJicDihTYLA.jpg?size=604x524&quality=95&sign=7ffe3afe5994ed4cddcc0e43cdef0f87&type=album" alt="Кот 1" />
@@ -300,9 +387,12 @@
 
     <!-- Ссылки -->
     <div class="links">
-      <a href="test.html" target="_blank">о котах</a>
+      <a href="тест2.html" target="_blank">о котах</a>
       <a href="https://rutube.ru" target="_blank">видео о котах</a>
     </div>
+
+
+
 
     <!-- Таблица -->
     <table>
@@ -318,7 +408,7 @@
         <td>серые</td>
         <td>полосаты</td>
         <td>рыжие</td>
-        <td>дики</td>
+        <td>дикие</td>
         <td>шлепаобразные</td>
       </tr>
     </table>
@@ -337,9 +427,31 @@
   </main>
 </div>
 
+<!-- Текст о котах -->
+<!-- Текст о Кларе на немецком -->
+<div class="stepik" style="padding:20px; background:#fff; border-radius:15px; max-width:800px; margin:50px auto; font-size:1.2rem; line-height:1.5;">
+  <p>Wenn ich jetzt jemanden sagen höre, dass er Tiere mag, glaube ich nicht sofort. Es können auch nur leere Worte sein. Denn zur Liebe gehören die Sorge um das Tier und das große Verantwortungsgefühl. Nur gutherzige Menschen können richtige Tierfreunde sein.</p>
+  <p>Ich bin ein richtiger Tierfreund. Ich habe zu Hause eine Katze, sie heißt Klara. Klara ist 3 Jahre alt, sie ist schwarz, klug und sehr nett. Sie ist immer lustig und spielt sehr gern. Ich füttere sie regelmäßig. Die Katzen sind Fleischfresser. Sie brauchen Eiweiß, das es in Fleisch, Milch, Fisch und in Eiern gibt. Fleisch gebe ich am besten roh. Jeden Tag muß frisches Trinkwasser für Klara bereit stehen. Ich kämme Klara, das gefällt ihr.</p>
+  <p>Leider kann ich Klara auf Spaziergänge nicht mitnehmen. Sie hat Angst. Es ist sehr gemütlich, mit Klara am Abend ein Buch zu lesen. Sie sitzt neben mir und schnurrt. Den ganzen Tag ist Klara allein zu Hause. Ich bin in der Schule und meine Eltern arbeiten. Ich glaube, sie schläft den ganzen Tag. Aber wie froh ist sie, wenn wir am Abend nach Hause zurückkehren! Sie schnurrt und geht überall mir nach. Sie will spielen und ich spiele mit ihr. Ich liebe Klara sehr und verbringe gern meine freie Zeit mit ihr zusammen.</p>
+</div>
+
 <!-- Подвал -->
 <footer>
-  © 2025 Мой сайт о котах. Все права защищены.
+  © 2025 Мой сайт о котах. Все права защищены. <a href="https://stepik.org/cert/2887155?lang=en">Лицензия</a> | <a>h</a>href="mailo:aviamax@.net">Служба поддержки</a> | <a href="mailto:ismail_2016@mail.ru">Оставьте отзыв</a>
+  <script>
+  $(document).ready(function() {
+  $('#languageBtn').click(function() {
+    $('#languageMenu').toggle(); // Показываем или скрываем меню
+  });
+  
+  $('.lang').click(function() {
+    var selectedLang = $(this).data('lang');
+    alert('Выбран язык: ' + selectedLang);
+    // Тут можно реализовать смену языка сайта
+    $('#languageMenu').hide(); // скрываем меню после выбора
+  });
+});
+</script>
 </footer>
 
 <!-- Скрипт погоды -->
@@ -364,10 +476,24 @@
       document.getElementById('weather').innerHTML = 'Ошибка загрузки погоды';
     }
   }
-
   fetchWeather();
+
+
 </script>
+<!-- В конце файла перед </body> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="kode.js"></script>
+<script>
+
+</script>
+<script>
+
+  // Обработчик для кнопки "крест" — перенаправление на Яндекс
+  document.getElementById('closeBtn').addEventListener('click', function() {
+    window.location.href = 'https://yandex.ru';
+  });
 
 
+</script>
 </body>
 </html>
